@@ -682,10 +682,10 @@ static VOID _splicer_mode_cfg(SPLICER_APP_T *pst_app_splicer_dev,UINT8 u8_idx)
 			app_video_vipss_trig(CHANNEL1_without_dsc); 
 			mculib_delay_ms(50);
 			
-			pst_app_splicer_dev->st_winborder[0].left = 0;
-			pst_app_splicer_dev->st_winborder[0].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h;
-			pst_app_splicer_dev->st_winborder[0].top = 0;
-			pst_app_splicer_dev->st_winborder[0].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v;
+			pst_app_splicer_dev->st_winborder[0].left = 0 + g_u8_border_fusion;
+			pst_app_splicer_dev->st_winborder[0].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h + g_u8_border_fusion;
+			pst_app_splicer_dev->st_winborder[0].top = 0 + g_u8_border_fusion;
+			pst_app_splicer_dev->st_winborder[0].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v + g_u8_border_fusion;
 
 			pst_app_splicer_dev->st_winborder[1].left = 0;
 			pst_app_splicer_dev->st_winborder[1].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h;
@@ -702,6 +702,11 @@ static VOID _splicer_mode_cfg(SPLICER_APP_T *pst_app_splicer_dev,UINT8 u8_idx)
 			pst_app_splicer_dev->st_winborder[3].top = 0;
 			pst_app_splicer_dev->st_winborder[3].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v;
 
+
+			pst_app_splicer_dev->st_winborder[4].left = 0 + g_u8_border_fusion;
+			pst_app_splicer_dev->st_winborder[4].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h + g_u8_border_fusion;
+			pst_app_splicer_dev->st_winborder[4].top = 0 + g_u8_border_fusion;
+			pst_app_splicer_dev->st_winborder[4].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v + g_u8_border_fusion;
             
 			_splicer_vopss_cfg(VOPSS1, pst_app_splicer_dev);
             _splicer_vopss_cfg(VOPSS2, pst_app_splicer_dev);
@@ -864,10 +869,10 @@ static VOID _splicer_mode_cfg(SPLICER_APP_T *pst_app_splicer_dev,UINT8 u8_idx)
     			if(g_u8_border_fusion * 8 > pst_app_splicer_dev->tSdn_MemSize[0].u16_v / 4)
     				g_u8_border_fusion = pst_app_splicer_dev->tSdn_MemSize[0].u16_v / 4 / 8;
     			
-    			pst_app_splicer_dev->st_winborder[0].left = 0;
-    			pst_app_splicer_dev->st_winborder[0].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 2 - g_u8_border_fusion * 8;
-    			pst_app_splicer_dev->st_winborder[0].top = 0;
-    			pst_app_splicer_dev->st_winborder[0].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v / 2 - g_u8_border_fusion * 8;
+    			pst_app_splicer_dev->st_winborder[0].left = 0 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[0].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 2 - g_u8_border_fusion * 8 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[0].top = 0 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[0].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v / 2 - g_u8_border_fusion * 8 + g_u8_border_fusion;
     			
     			pst_app_splicer_dev->st_winborder[1].left = pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 2 + g_u8_border_fusion * 8;
     			pst_app_splicer_dev->st_winborder[1].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h;
@@ -883,7 +888,12 @@ static VOID _splicer_mode_cfg(SPLICER_APP_T *pst_app_splicer_dev,UINT8 u8_idx)
     			pst_app_splicer_dev->st_winborder[3].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h;
     			pst_app_splicer_dev->st_winborder[3].top = pst_app_splicer_dev->tSdn_MemSize[0].u16_v / 2 + g_u8_border_fusion * 8;
     			pst_app_splicer_dev->st_winborder[3].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v;
-    			
+
+    			pst_app_splicer_dev->st_winborder[4].left = 0 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[4].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 2 - g_u8_border_fusion * 8 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[4].top = 0 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[4].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v / 2 - g_u8_border_fusion * 8 + g_u8_border_fusion;
+                
     			pst_app_splicer_dev->st_winborder[0].right 	= return_com_multiple(pst_app_splicer_dev->st_winborder[0].right, 1);
     			pst_app_splicer_dev->st_winborder[0].bottom = return_com_multiple(pst_app_splicer_dev->st_winborder[0].bottom, 1);
     			pst_app_splicer_dev->st_winborder[1].left 	= return_com_multiple(pst_app_splicer_dev->st_winborder[1].left, 1);
@@ -898,6 +908,8 @@ static VOID _splicer_mode_cfg(SPLICER_APP_T *pst_app_splicer_dev,UINT8 u8_idx)
     			pst_app_splicer_dev->st_winborder[2].bottom = return_com_multiple(pst_app_splicer_dev->st_winborder[2].bottom, 1);
     			pst_app_splicer_dev->st_winborder[3].left 	= return_com_multiple(pst_app_splicer_dev->st_winborder[3].left, 1);
     			pst_app_splicer_dev->st_winborder[3].top 	= return_com_multiple(pst_app_splicer_dev->st_winborder[3].top, 1);
+
+                
     			_splicer_vopss_cfg(VOPSS1, pst_app_splicer_dev); 
     			_splicer_vopss_cfg(VOPSS2, pst_app_splicer_dev);
     			_splicer_vopss_cfg(VOPSS3, pst_app_splicer_dev);
@@ -1015,10 +1027,10 @@ static VOID _splicer_mode_cfg(SPLICER_APP_T *pst_app_splicer_dev,UINT8 u8_idx)
     			if(g_u8_border_fusion * 8 > pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 4)
     				g_u8_border_fusion = pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 4 / 8;
     			
-    			pst_app_splicer_dev->st_winborder[0].left = 0;
-    			pst_app_splicer_dev->st_winborder[0].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 2 - g_u8_border_fusion * 8;
-    			pst_app_splicer_dev->st_winborder[0].top = 0;
-    			pst_app_splicer_dev->st_winborder[0].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v;
+    			pst_app_splicer_dev->st_winborder[0].left = 0 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[0].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 2 - g_u8_border_fusion * 8 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[0].top = 0 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[0].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v + g_u8_border_fusion;
     			
     			pst_app_splicer_dev->st_winborder[1].left = pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 2 + g_u8_border_fusion * 8;
     			pst_app_splicer_dev->st_winborder[1].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h;
@@ -1034,6 +1046,11 @@ static VOID _splicer_mode_cfg(SPLICER_APP_T *pst_app_splicer_dev,UINT8 u8_idx)
     			pst_app_splicer_dev->st_winborder[3].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h;
     			pst_app_splicer_dev->st_winborder[3].top = 0;
     			pst_app_splicer_dev->st_winborder[3].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v;
+
+    			pst_app_splicer_dev->st_winborder[4].left = 0 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[4].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h / 2 - g_u8_border_fusion * 8 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[4].top = 0 + g_u8_border_fusion;
+    			pst_app_splicer_dev->st_winborder[4].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v + g_u8_border_fusion;
 
     			
     			pst_app_splicer_dev->st_winborder[0].right 	= return_com_multiple(pst_app_splicer_dev->st_winborder[0].right, 1);
