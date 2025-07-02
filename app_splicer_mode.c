@@ -687,10 +687,10 @@ static VOID _splicer_mode_cfg(SPLICER_APP_T *pst_app_splicer_dev,UINT8 u8_idx)
 			pst_app_splicer_dev->st_winborder[0].top = 0 + g_u8_border_fusion;
 			pst_app_splicer_dev->st_winborder[0].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v + g_u8_border_fusion;
 
-			pst_app_splicer_dev->st_winborder[1].left = 0+2;
-			pst_app_splicer_dev->st_winborder[1].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h+2;
-			pst_app_splicer_dev->st_winborder[1].top = 0+2;
-			pst_app_splicer_dev->st_winborder[1].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v+2;
+			pst_app_splicer_dev->st_winborder[1].left = 0+22;
+			pst_app_splicer_dev->st_winborder[1].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h+22;
+			pst_app_splicer_dev->st_winborder[1].top = 0+22;
+			pst_app_splicer_dev->st_winborder[1].bottom = pst_app_splicer_dev->tSdn_MemSize[0].u16_v+22;
 
 			pst_app_splicer_dev->st_winborder[2].left = 0;
 			pst_app_splicer_dev->st_winborder[2].right = pst_app_splicer_dev->tSdn_MemSize[0].u16_h;
