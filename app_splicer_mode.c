@@ -650,6 +650,7 @@ static VOID _splicer_mode_cfg(SPLICER_APP_T *pst_app_splicer_dev,UINT8 u8_idx)
 {
     LOG("push 1");
     LOG("push 2");
+    LOG("push 3");
     if(gst_splicer_app_dev.b_bezel_on)
         g_u8_border_fusion = gst_splicer_app_dev.u8_border_fusion;
     else
